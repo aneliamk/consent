@@ -1,0 +1,1475 @@
+@prefix : <http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix AnnotationVocabulary: <https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/> .
+@base <http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor> .
+
+<http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/source
+terms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+skos:editorialNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/adaptedFrom
+AnnotationVocabulary:adaptedFrom rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/explanatoryNote
+AnnotationVocabulary:explanatoryNote rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/synonym
+AnnotationVocabulary:synonym rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfAgreement
+:hasProofOfAgreement rdf:type owl:ObjectProperty ;
+                     rdfs:range :Agreement ,
+                                :Consent .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#hasProofOfConsent
+:hasProofOfConsent rdf:type owl:ObjectProperty ;
+                   rdfs:domain :ProofOfConcent ;
+                   rdfs:range :Consent .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ControlledBy
+:ControlledBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :CampaignController ;
+              rdfs:range :Campaign ,
+                         :Organization .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CreatedBy
+:CreatedBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :CampaignCreator ;
+           rdfs:range :Campaign ,
+                      :Organization .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#RequiresData
+:RequiresData rdf:type owl:ObjectProperty ;
+              rdfs:domain :RequiredData ;
+              rdfs:range :Campaign ,
+                         :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#belongsToTheArea
+:belongsToTheArea rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain :Area ;
+                  rdfs:range :Organization .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hadPurpose
+:hadPurpose rdf:type owl:ObjectProperty ;
+            rdfs:domain :Purpose ;
+            rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasAvailability
+:hasAvailability rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :Availability ;
+                 rdfs:range :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasCapacity
+:hasCapacity rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Capacity ;
+             rdfs:range :Storage .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasConsent
+:hasConsent rdf:type owl:ObjectProperty ;
+            rdfs:range :Campaign ,
+                       :Consent .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasContactDetails
+:hasContactDetails rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :ContactDetails ;
+                   rdfs:range :Organization ,
+                              :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasDuration
+:hasDuration rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Duration ;
+             rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasEndDate
+:hasEndDate rdf:type owl:ObjectProperty ;
+            rdfs:domain :End ;
+            rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasGPScoordinates
+:hasGPScoordinates rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :CarSensor ,
+                               :GPS ;
+                   rdfs:range :Source .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasLatitude
+:hasLatitude rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Latitude ;
+             rdfs:range :GPS .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasLongitude
+:hasLongitude rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Longitude ;
+              rdfs:range :GPS .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasName
+:hasName rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Name ;
+         rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasPhysicalAddress
+:hasPhysicalAddress rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :PhysicalAddress ;
+                    rdfs:range :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcess
+:hasProcess rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessDuration
+:hasProcessDuration rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :ProcessDuration ;
+                    rdfs:range :Campaign ,
+                               :Organization ,
+                               :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessEnd
+:hasProcessEnd rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :ProcessEnd .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessPurpose
+:hasProcessPurpose rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :ProcessPurpose .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasProcessStart
+:hasProcessStart rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :ProcessStart .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStartDate
+:hasStartDate rdf:type owl:ObjectProperty ;
+              rdfs:domain :Start ;
+              rdfs:range :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStatus
+:hasStatus rdf:type owl:ObjectProperty ;
+           rdfs:range :Campaign ,
+                      :Consent .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasStorageLocation
+:hasStorageLocation rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :StorageLocation ;
+                    rdfs:range :Data ,
+                               :Storage .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#hasValidationTime
+:hasValidationTime rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Validation ;
+                   rdfs:range :Consent .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isDataSource
+:isDataSource rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Sensor ;
+              rdfs:range :Source .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isInitiatedBy
+:isInitiatedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :ProcessInitiator .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedBy
+:isProvidedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:range :Consent ,
+                         :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isProvidedTo
+:isProvidedTo rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Consent ;
+              rdfs:range :Consent ,
+                         :Organization ,
+                         :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isRequestedBy
+:isRequestedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :RequestedBy ;
+               rdfs:range :Campaign ,
+                          :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isSecuredBy
+:isSecuredBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Security ;
+             rdfs:range :Data ,
+                        :Storage ,
+                        :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isSignedOnline
+:isSignedOnline rdf:type owl:ObjectProperty ;
+                rdfs:domain :online_contract ;
+                rdfs:range <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#isUsedFor
+:isUsedFor rdf:type owl:ObjectProperty ;
+           rdfs:domain :Usage ;
+           rdfs:range :Data ,
+                      :Organization .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasContractualElement
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasContractualElement> rdf:type owl:ObjectProperty ;
+                                                                                           rdfs:domain <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/ContractualElement> ;
+                                                                                           rdfs:range :Agreement .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasExecutionDateTimeStamp
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasExecutionDateTimeStamp> rdf:type owl:ObjectProperty ;
+                                                                                               rdfs:domain :executionDate ;
+                                                                                               rdfs:range :Agreement .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasNonBindingTerms
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasNonBindingTerms> rdf:type owl:ObjectProperty ;
+                                                                                        rdfs:range <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/ContractualElement> .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/isAbout
+<https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/isAbout> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:domain :About ;
+                                                                               rdfs:range :Agreement ,
+                                                                                          :Campaign ,
+                                                                                          :Consent .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/isMandatedBy
+<https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/isMandatedBy> rdf:type owl:ObjectProperty ;
+                                                                                 rdfs:domain <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> ;
+                                                                                 rdfs:range :Agreement .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/usesAdministrativeLanguage
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/usesAdministrativeLanguage> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:domain <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/Language> ;
+                                                                                          rdfs:range :Agreement .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishFullName
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishFullName> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortName
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortName> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortNameInCapitals
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortNameInCapitals> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchFullName
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchFullName> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchShortName
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchShortName> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchShortNameInCapitals
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchShortNameInCapitals> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/isIndependent
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/isIndependent> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#ConsentSubject
+:ConsentSubject rdf:type owl:Class ;
+                rdfs:subClassOf :Consent .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Proof
+:Proof rdf:type owl:Class ;
+       rdfs:subClassOf :Agreement .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#ProofOfConcent
+:ProofOfConcent rdf:type owl:Class ;
+                rdfs:subClassOf :Consent .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Revoke
+:Revoke rdf:type owl:Class ;
+        rdfs:subClassOf <https://w3id.org/GConsent#Status> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#Type
+:Type rdf:type owl:Class ;
+      rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#About
+:About rdf:type owl:Class ;
+       owl:equivalentClass :Name ;
+       rdfs:subClassOf :Agreement .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Active
+:Active rdf:type owl:Class ;
+        rdfs:subClassOf <https://w3id.org/GConsent#Status> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agreement
+:Agreement rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Agriculture
+:Agriculture rdf:type owl:Class ;
+             rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Analysis
+:Analysis rdf:type owl:Class ;
+          rdfs:subClassOf <https://w3id.org/GConsent#Processing> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Anonymize
+:Anonymize rdf:type owl:Class ;
+           rdfs:subClassOf :Deletion .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Area
+:Area rdf:type owl:Class ;
+      rdfs:subClassOf :Organization .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Automobile
+:Automobile rdf:type owl:Class ;
+            rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Availability
+:Availability rdf:type owl:Class ;
+              rdfs:subClassOf :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Available
+:Available rdf:type owl:Class ;
+           rdfs:subClassOf :Availability .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Business
+:Business rdf:type owl:Class ;
+          rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Campaign
+:Campaign rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignController
+:CampaignController rdf:type owl:Class ;
+                    rdfs:subClassOf :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CampaignCreator
+:CampaignCreator rdf:type owl:Class ;
+                 rdfs:subClassOf :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Capacity
+:Capacity rdf:type owl:Class ;
+          rdfs:subClassOf :Storage .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CarSensor
+:CarSensor rdf:type owl:Class ;
+           rdfs:subClassOf :Sensor .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#City
+:City rdf:type owl:Class ;
+      rdfs:subClassOf :PhysicalAddress .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Clothes
+:Clothes rdf:type owl:Class ;
+         rdfs:subClassOf :Retail .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Collection
+:Collection rdf:type owl:Class ;
+            rdfs:subClassOf <https://w3id.org/GConsent#DataCollection> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#CollectionType
+:CollectionType rdf:type owl:Class ;
+                rdfs:subClassOf :Collection .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Commercial
+:Commercial rdf:type owl:Class ;
+            rdfs:subClassOf :Usage .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Consent
+:Consent rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Construction
+:Construction rdf:type owl:Class ;
+              rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ContactDetails
+:ContactDetails rdf:type owl:Class ;
+                rdfs:subClassOf :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Country
+:Country rdf:type owl:Class ;
+         rdfs:subClassOf :PhysicalAddress .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Crowdsourcing
+:Crowdsourcing rdf:type owl:Class ;
+               rdfs:subClassOf :CollectionType .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Data
+:Data rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#DataVolume
+:DataVolume rdf:type owl:Class ;
+            rdfs:subClassOf :Crowdsourcing .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Deletion
+:Deletion rdf:type owl:Class ;
+          rdfs:subClassOf <https://w3id.org/GConsent#Processing> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Department
+:Department rdf:type owl:Class ;
+            rdfs:subClassOf :University .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Destroy
+:Destroy rdf:type owl:Class ;
+         rdfs:subClassOf :Deletion .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Detect
+:Detect rdf:type owl:Class ;
+        rdfs:subClassOf :Analysis .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Device
+:Device rdf:type owl:Class ;
+        rdfs:subClassOf :Source .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Duration
+:Duration rdf:type owl:Class ;
+          rdfs:subClassOf :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Educational
+:Educational rdf:type owl:Class ;
+             rdfs:subClassOf :Organization .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Electronics
+:Electronics rdf:type owl:Class ;
+             rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#EmailAddress
+:EmailAddress rdf:type owl:Class ;
+              rdfs:subClassOf :ContactDetails .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Encryption
+:Encryption rdf:type owl:Class ;
+            rdfs:subClassOf :Security .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#End
+:End rdf:type owl:Class ;
+     rdfs:subClassOf :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Erase
+:Erase rdf:type owl:Class ;
+       rdfs:subClassOf :Deletion .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Food
+:Food rdf:type owl:Class ;
+      rdfs:subClassOf :Retail .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Fuel
+:Fuel rdf:type owl:Class ;
+      rdfs:subClassOf :CarSensor .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#GPS
+:GPS rdf:type owl:Class ;
+     rdfs:subClassOf :CarSensor .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Given
+:Given rdf:type owl:Class ;
+       rdfs:subClassOf <https://w3id.org/GConsent#Status> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Government
+:Government rdf:type owl:Class ;
+            rdfs:subClassOf :Organization .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Healthcare
+:Healthcare rdf:type owl:Class ;
+            rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#InvolvedResearchers
+:InvolvedResearchers rdf:type owl:Class ;
+                     rdfs:subClassOf :ResearchGroup .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Latitude
+:Latitude rdf:type owl:Class ;
+          rdfs:subClassOf :GPS .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Longitude
+:Longitude rdf:type owl:Class ;
+           rdfs:subClassOf :GPS .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Medicine
+:Medicine rdf:type owl:Class ;
+          rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#MobilePhone
+:MobilePhone rdf:type owl:Class ;
+             rdfs:subClassOf :ContactDetails .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Name
+:Name rdf:type owl:Class ;
+      rdfs:subClassOf :Campaign ,
+                      :User .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#News
+:News rdf:type owl:Class ;
+      rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#NonProfit
+:NonProfit rdf:type owl:Class ;
+           rdfs:subClassOf :Organization .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#NotActive
+:NotActive rdf:type owl:Class ;
+           rdfs:subClassOf <https://w3id.org/GConsent#Status> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#NotGiven
+:NotGiven rdf:type owl:Class ;
+          rdfs:subClassOf <https://w3id.org/GConsent#Status> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#NotRequested
+:NotRequested rdf:type owl:Class ;
+              rdfs:subClassOf <https://w3id.org/GConsent#Status> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Observe
+:Observe rdf:type owl:Class ;
+         rdfs:subClassOf :Analysis .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Organization
+:Organization rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#OrganizationName
+:OrganizationName rdf:type owl:Class ;
+                  rdfs:subClassOf :Organization .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Oxygen
+:Oxygen rdf:type owl:Class ;
+        rdfs:subClassOf :CarSensor .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Pending
+:Pending rdf:type owl:Class ;
+         rdfs:subClassOf :Requested .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#PhysicalAddress
+:PhysicalAddress rdf:type owl:Class ;
+                 rdfs:subClassOf :ContactDetails .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#PostCode
+:PostCode rdf:type owl:Class ;
+          rdfs:subClassOf :PhysicalAddress .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#PreExisting
+:PreExisting rdf:type owl:Class ;
+             rdfs:subClassOf :CollectionType .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Problems
+:Problems rdf:type owl:Class ;
+          rdfs:subClassOf :Detect .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ProcessDuration
+:ProcessDuration rdf:type owl:Class ;
+                 rdfs:subClassOf <https://w3id.org/GConsent#Processing> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ProcessEnd
+:ProcessEnd rdf:type owl:Class ;
+            rdfs:subClassOf <https://w3id.org/GConsent#Processing> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ProcessInitiator
+:ProcessInitiator rdf:type owl:Class ;
+                  rdfs:subClassOf <https://w3id.org/GConsent#Processing> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ProcessPurpose
+:ProcessPurpose rdf:type owl:Class ;
+                rdfs:subClassOf <https://w3id.org/GConsent#Processing> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ProcessStart
+:ProcessStart rdf:type owl:Class ;
+              rdfs:subClassOf <https://w3id.org/GConsent#Processing> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Profit
+:Profit rdf:type owl:Class ;
+        rdfs:subClassOf :Organization .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Purpose
+:Purpose rdf:type owl:Class ;
+         rdfs:subClassOf :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#RealTime
+:RealTime rdf:type owl:Class ;
+          rdfs:subClassOf :CollectionType .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#RealTimeAcquisition
+:RealTimeAcquisition rdf:type owl:Class ;
+                     rdfs:subClassOf :Availability .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Reason
+:Reason rdf:type owl:Class ;
+        rdfs:subClassOf :Consent ,
+                        :NotGiven .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Requested
+:Requested rdf:type owl:Class ;
+           rdfs:subClassOf <https://w3id.org/GConsent#Status> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#RequestedBy
+:RequestedBy rdf:type owl:Class ;
+             rdfs:subClassOf :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#RequiredData
+:RequiredData rdf:type owl:Class ;
+              rdfs:subClassOf :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Research
+:Research rdf:type owl:Class ;
+          rdfs:subClassOf :Usage .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ResearchGroup
+:ResearchGroup rdf:type owl:Class ;
+               rdfs:subClassOf :Department .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ResearchGroupLeader
+:ResearchGroupLeader rdf:type owl:Class ;
+                     rdfs:subClassOf :ResearchGroup .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ResearchGroupName
+:ResearchGroupName rdf:type owl:Class ;
+                   rdfs:subClassOf :ResearchGroup .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Result
+:Result rdf:type owl:Class ;
+        rdfs:subClassOf :Pending .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Retail
+:Retail rdf:type owl:Class ;
+        rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Reuse
+:Reuse rdf:type owl:Class ;
+       rdfs:subClassOf <https://w3id.org/GConsent#DataSharing> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Security
+:Security rdf:type owl:Class ;
+          rdfs:subClassOf :Storage .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Sensor
+:Sensor rdf:type owl:Class ;
+        rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#SharingEntities
+:SharingEntities rdf:type owl:Class ;
+                 rdfs:subClassOf :Transfer .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Similarities
+:Similarities rdf:type owl:Class ;
+              rdfs:subClassOf :Detect .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#SmartCity
+:SmartCity rdf:type owl:Class ;
+           rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Source
+:Source rdf:type owl:Class ;
+        rdfs:subClassOf :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Speed
+:Speed rdf:type owl:Class ;
+       rdfs:subClassOf :CarSensor .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Start
+:Start rdf:type owl:Class ;
+       rdfs:subClassOf :Campaign .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Storage
+:Storage rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#StorageLocation
+:StorageLocation rdf:type owl:Class ;
+                 rdfs:subClassOf :Storage .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Street
+:Street rdf:type owl:Class ;
+        rdfs:subClassOf :PhysicalAddress .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#StreetNumber
+:StreetNumber rdf:type owl:Class ;
+              rdfs:subClassOf :PhysicalAddress .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Task
+:Task rdf:type owl:Class ;
+      rdfs:subClassOf :ResearchGroup .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Technology
+:Technology rdf:type owl:Class ;
+            rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Transfer
+:Transfer rdf:type owl:Class ;
+          rdfs:subClassOf <https://w3id.org/GConsent#DataSharing> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Transport
+:Transport rdf:type owl:Class ;
+           rdfs:subClassOf :Area .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#TwoFactorAuthorization
+:TwoFactorAuthorization rdf:type owl:Class ;
+                        rdfs:subClassOf :Security .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#University
+:University rdf:type owl:Class ;
+            rdfs:subClassOf :Educational .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Usage
+:Usage rdf:type owl:Class ;
+       rdfs:subClassOf :Data .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#UsedApproach
+:UsedApproach rdf:type owl:Class ;
+              rdfs:subClassOf :Anonymize .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#User
+:User rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#Validation
+:Validation rdf:type owl:Class ;
+            rdfs:subClassOf :Given .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#ValidationTime
+:ValidationTime rdf:type owl:Class ;
+                rdfs:subClassOf :Validation .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#executionDate
+:executionDate rdf:type owl:Class ;
+               rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/DateTimeStamp> .
+
+
+###  http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#online_contract
+:online_contract rdf:type owl:Class ;
+                 rdfs:subClassOf :Type .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/ConditionPrecedent
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/ConditionPrecedent> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/ContractualElement> ;
+                                                                                        rdfs:comment "QName: fibo-fnd-agr-ctr:ConditionPrecedent" ;
+                                                                                        rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                        rdfs:label "condition precedent" ;
+                                                                                        skos:definition "condition that must be met, or an event or state of affairs that must occur, before a contract is considered in effect or certain obligations are expected of some party to that contract" ;
+                                                                                        AnnotationVocabulary:explanatoryNote "Condition precedents are common in wills and trusts." ,
+                                                                                                                             "There may also be condition precedents in the ongoing life of a contract, which state that if condition X occurs, event Y will then occur. Condition X is the condition precedent." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf :Agreement ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasContractualElement> ;
+                                                                                                owl:someValuesFrom <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/ContractualElement>
+                                                                                              ] ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasExecutionDateTimeStamp> ;
+                                                                                                owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onClass <https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/DateTimeStamp>
+                                                                                              ] ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/isAssignable> ;
+                                                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange xsd:boolean
+                                                                                              ] ;
+                                                                              rdfs:comment "QName: fibo-fnd-agr-ctr:Contract" ;
+                                                                              rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                              rdfs:label "contract" ;
+                                                                              skos:definition "voluntary, deliberate agreement between two or more competent parties to which those parties agree to be legally bound, and to which the parties must have provided valuable consideration" ;
+                                                                              AnnotationVocabulary:adaptedFrom "http://www.businessdictionary.com/definition/contract.html"^^xsd:anyURI ;
+                                                                              AnnotationVocabulary:explanatoryNote "A contractual relationship is evidenced by (1) an offer, (2) acceptance of the offer, and a (3) valid (legal and valuable) consideration. A contract is a kind of agreement, and as such it embodies the assertion that it has been negotiated, such negotiation having included the presence of some offer and the acceptance of that offer on the part of either or both of the parties." ,
+                                                                                                                   "Contracts are usually written but may be spoken or implied, and generally have to do with employment, sale or lease, or tenancy." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/ContractualDefinition
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/ContractualDefinition> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/ContractualElement> ;
+                                                                                           rdfs:comment "QName: fibo-fnd-agr-ctr:ContractualDefinition" ;
+                                                                                           rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                           rdfs:label "contractual definition" ;
+                                                                                           skos:definition "contractual element that defines something in a contract or other legal instrument" ;
+                                                                                           skos:editorialNote "These are agreed definitions which are then referred to in terms in contracts or other legal instruments." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/ContractualElement
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/ContractualElement> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf :Agreement ;
+                                                                                        rdfs:comment "QName: fibo-fnd-agr-ctr:ContractualElement" ;
+                                                                                        rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                        rdfs:label "contractual element" ;
+                                                                                        skos:definition "general and special arrangements, provisions, requirements, rules, specifications, and standards that form an integral part of an agreement or contract" ;
+                                                                                        AnnotationVocabulary:adaptedFrom "http://www.businessdictionary.com/definition/terms-and-conditions.html"^^xsd:anyURI .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/MutualContractualAgreement
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/MutualContractualAgreement> rdf:type owl:Class ;
+                                                                                                rdfs:subClassOf :Type ;
+                                                                                                owl:disjointWith <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract> ;
+                                                                                                rdfs:comment "QName: fibo-fnd-agr-ctr:MutualContractualAgreement" ;
+                                                                                                rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                                rdfs:label "mutual contractual agreement" ;
+                                                                                                skos:definition "contract between two or more specific named parties; the rights and obligations pertaining to either party cannot be transferred to another party without prior written permission or a change to the contract itself" ;
+                                                                                                AnnotationVocabulary:synonym "bilateral contract" .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/PromissoryNote
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/PromissoryNote> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract> ,
+                                                                                                    <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract> ;
+                                                                                    rdfs:comment "QName: fibo-fnd-agr-ctr:PromissoryNote" ;
+                                                                                    rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                    rdfs:label "promissory note" ;
+                                                                                    skos:definition "unconditional and unsecured promise by one party (the issuer or promisor) to another (the payee or promisee) that commits the issuer to pay a specified sum on demand, or on a fixed or a determinable date" ;
+                                                                                    AnnotationVocabulary:explanatoryNote "Promissory notes (such as bank or currency notes) are negotiable instruments." ,
+                                                                                                                         "Unlike a contract, a Promissory Note does not need to be signed by both parties. It is essentially a promise from one party to the holder, of some good or benefit. Promissory notes are generally fully fungible." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/TermSheet
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/TermSheet> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf :Agreement ;
+                                                                               rdfs:comment "QName: fibo-fnd-agr-ctr:TermSheet" ;
+                                                                               rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                               rdfs:label "term sheet" ;
+                                                                               skos:definition "nonbinding agreement setting forth the basic terms and conditions under which a proposed business deal may be made" ;
+                                                                               AnnotationVocabulary:explanatoryNote "Term sheets state the intentions of the parties and are used to guide legal counsel in the preparation of proposed agreements or contracts." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/TransferableContract
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/TransferableContract> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf :Type ;
+                                                                                          rdfs:comment "QName: fibo-fnd-agr-ctr:TransferableContract" ;
+                                                                                          rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                          rdfs:label "transferable contract" ;
+                                                                                          skos:definition "contract in which the rights and obligations of one party (the holder) may be transferred to another party, which thereby takes on the same rights and obligations with respect to the other party to the contract" ;
+                                                                                          AnnotationVocabulary:explanatoryNote "Note that the ability to transfer ownership of one side of a contract, and the concept of assignability, are distinct. In one case the contract may be freely traded; in the other case, some legal transfer of rights to a third party takes place, without a change in who are the signatories of a (typically bilateral) contract." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/UnilateralContract> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf :Type ;
+                                                                                        rdfs:comment "QName: fibo-fnd-agr-ctr:UnilateralContract" ;
+                                                                                        rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                        rdfs:label "unilateral contract" ;
+                                                                                        skos:definition "contract in which only one party makes an express promise, or undertakes a performance without first securing a reciprocal agreement from the other party" ;
+                                                                                        AnnotationVocabulary:explanatoryNote """In a unilateral, or one-sided, contract, one party, known as the offeror, makes a promise in exchange for an act (or abstention from acting) by another party, known as the offeree. If the offeree acts on the offeror's promise, the offeror is legally obligated to fulfill the contract, but an offeree cannot be forced to act (or not act), because no return promise has been made to the offeror. After an offeree has performed, only one enforceable promise exists, that of the offeror.
+
+A unilateral contract differs from a Bilateral Contract, in which the parties exchange mutual promises. Bilateral contracts are commonly used in business transactions; a sale of goods is a type of bilateral contract.""" .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/VerbalContract
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/VerbalContract> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf :Type ;
+                                                                                    owl:disjointWith <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract> ;
+                                                                                    rdfs:comment "QName: fibo-fnd-agr-ctr:VerbalContract" ;
+                                                                                    rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                    rdfs:label "verbal contract" ;
+                                                                                    skos:definition "contract that exists as a result of some verbal exchange" .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract
+<https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf :Type ;
+                                                                                     rdfs:comment "QName: fibo-fnd-agr-ctr:WrittenContract" ;
+                                                                                     rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> ;
+                                                                                     rdfs:label "written contract" ;
+                                                                                     skos:definition "formal contract that is written and signed by the parties thereto" .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/DateTimeStamp
+<https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/DateTimeStamp> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf :Agreement .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/PostCodeArea
+<https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/PostCodeArea> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeographicRegion> ;
+                                                                              rdfs:comment "QName: fibo-fnd-plc-adr:PostCodeArea" ;
+                                                                              rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/> ;
+                                                                              rdfs:label "post code area"@en ;
+                                                                              skos:definition "physical area uniquely identified by some postal code" .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/BusinessCenter
+<https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/BusinessCenter> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/Municipality> ;
+                                                                                rdfs:comment "QName: fibo-fnd-plc-loc:BusinessCenter" ;
+                                                                                rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/> ;
+                                                                                rdfs:label "business center" ;
+                                                                                skos:definition "municipality where business is conducted, especially one that is considered a financial center" ;
+                                                                                AnnotationVocabulary:adaptedFrom "FpML Business Center and related codes, see http://www.fpml.org/coding-scheme/business-center-7-14.xml" .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/County
+<https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/County> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/CountrySubdivision> ;
+                                                                        rdfs:comment "QName: fibo-fnd-plc-loc:County" ;
+                                                                        rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/> ;
+                                                                        rdfs:label "county"@en ;
+                                                                        skos:definition "political and administrative division of a country, state or province, providing certain local governmental services"@en .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/FederalCapitalArea
+<https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/FederalCapitalArea> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeopoliticalEntity> ;
+                                                                                    rdfs:comment "QName: fibo-fnd-plc-loc:FederalCapitalArea" ;
+                                                                                    rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/> ;
+                                                                                    rdfs:label "federal capital area" ;
+                                                                                    skos:definition "geopolitical entity that is or includes the municipality or capital city that acts as the seat of the federal government" ;
+                                                                                    skos:scopeNote "This model includes representation of the capital administrative region of those federations for which the capital is situated other than within one of the states or provinces which make up the country as a whole. This is so that addresses and other references which may need to refer to any location within the country may do so. Examples include the District of Columbia in the US, and the Canberra area in Australia. Not all federations have such an area." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/FederalState
+<https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/FederalState> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/CountrySubdivision> ;
+                                                                              rdfs:comment "QName: fibo-fnd-plc-loc:FederalState" ;
+                                                                              rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/> ;
+                                                                              rdfs:label "federal state" ;
+                                                                              skos:definition "self-governing geopolitical unit which forms part of a wider geopolitical unit that is recognized as a country" ;
+                                                                              AnnotationVocabulary:explanatoryNote "This type of entity, variously referred to as a state, province or canton, has a level of self government including its own legal system and court jurisdiction, but cedes a level of autonomy to the federation of which it forms a part." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/Municipality
+<https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/Municipality> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeopoliticalEntity> ;
+                                                                              rdfs:comment "QName: fibo-fnd-plc-loc:Municipality" ;
+                                                                              rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/> ;
+                                                                              rdfs:label "municipality" ;
+                                                                              skos:definition "urban administrative division having corporate status and usually powers of self-government or jurisdiction" ;
+                                                                              skos:example "A municipality can be any political jurisdiction from a sovereign state, such as the Principality of Monaco, or a small village, such as West Hampton Dunes, New York." ;
+                                                                              skos:scopeNote """The territory over which a municipality has jurisdiction may encompass:
+- only one populated place such as a city, town, or village
+- several of such places (e.g., early jurisdictions in the state of New Jersey (1798-1899) as townships governing several villages, Municipalities of Mexico)
+- only parts of such places, sometimes boroughs of a city such as the 34 municipalities of Santiago, Chile.""" ;
+                                                                              AnnotationVocabulary:adaptedFrom "http://en.wikipedia.org/wiki/Municipality"^^xsd:anyURI ;
+                                                                              AnnotationVocabulary:explanatoryNote "A municipality is a general-purpose administrative subdivision, as opposed to a special-purpose district." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/Parcel
+<https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/Parcel> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeographicRegion> ;
+                                                                        rdfs:comment "QName: fibo-fnd-plc-loc:Parcel" ;
+                                                                        rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/> ;
+                                                                        rdfs:label "parcel"@en ;
+                                                                        skos:definition "tract or plot of land"@en ;
+                                                                        AnnotationVocabulary:explanatoryNote "A parcel is a defined piece of real estate, usually resulting from the division of a large area of land." .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/PhysicalLocation
+<https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/PhysicalLocation> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/Location> ;
+                                                                                  rdfs:comment "QName: fibo-fnd-plc-loc:PhysicalLocation" ;
+                                                                                  rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/> ;
+                                                                                  rdfs:label "physical location" ;
+                                                                                  skos:definition "location in physical space" .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/PopulatedPlace
+<https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/PopulatedPlace> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/PhysicalLocation> ;
+                                                                                rdfs:comment "QName: fibo-fnd-plc-loc:PopulatedPlace" ;
+                                                                                rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/> ;
+                                                                                rdfs:label "populated place" ;
+                                                                                skos:definition "community in which people live or have lived, without being specific as to size, population or importance" .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/RealEstate
+<https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/RealEstate> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/PhysicalLocation> ;
+                                                                            rdfs:comment "QName: fibo-fnd-plc-loc:RealEstate" ;
+                                                                            rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/> ;
+                                                                            rdfs:label "real estate"@en ;
+                                                                            skos:definition "tract or plot of land including any fixed structures on it, as well as the natural resources of the land including uncultivated flora and fauna, farmed crops and livestock, water, and any additional mineral deposits" ;
+                                                                            AnnotationVocabulary:explanatoryNote "Although media often refers to the \"real estate market\" from the perspective of residential living, real estate can be grouped into three broad categories based on its use, namely residential, commercial and industrial. Examples of real estate include undeveloped land, houses, condominiums, townhomes, office buildings, retail store buildings and factories." .
+
+
+###  https://w3id.org/GConsent#DataAdaptation
+<https://w3id.org/GConsent#DataAdaptation> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                           rdfs:comment """
+Represents the type of processing where Adaptation of data takes place.
+"""@en ;
+                                           rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                           rdfs:label "Data Adaptation"@en .
+
+
+###  https://w3id.org/GConsent#DataAlignment
+<https://w3id.org/GConsent#DataAlignment> rdf:type owl:Class ;
+                                          rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                          rdfs:comment """
+Represents the type of processing where Alignment of data takes place.
+"""@en ;
+                                          rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                          rdfs:label "Data Alignment"@en .
+
+
+###  https://w3id.org/GConsent#DataAlteration
+<https://w3id.org/GConsent#DataAlteration> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                           rdfs:comment """
+Represents the type of processing where Alteration of data takes place.
+"""@en ;
+                                           rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                           rdfs:label "Data Alteration"@en .
+
+
+###  https://w3id.org/GConsent#DataCollection
+<https://w3id.org/GConsent#DataCollection> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                           rdfs:comment """
+Represents the type of processing where Collection of data takes place.
+"""@en ;
+                                           rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                           rdfs:label "Data Collection"@en .
+
+
+###  https://w3id.org/GConsent#DataCombination
+<https://w3id.org/GConsent#DataCombination> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                            rdfs:comment """
+Represents the type of processing where Combination of data takes place.
+"""@en ;
+                                            rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                            rdfs:label "Data Combination"@en .
+
+
+###  https://w3id.org/GConsent#DataConsultation
+<https://w3id.org/GConsent#DataConsultation> rdf:type owl:Class ;
+                                             rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                             rdfs:comment """
+Represents the type of processing where Consultation of data takes place.
+"""@en ;
+                                             rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                             rdfs:label "Data Consultation"@en .
+
+
+###  https://w3id.org/GConsent#DataDestruction
+<https://w3id.org/GConsent#DataDestruction> rdf:type owl:Class ;
+                                            rdfs:subClassOf :Deletion ;
+                                            rdfs:comment """
+Represents the type of processing where Destruction of data takes place.
+"""@en ;
+                                            rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                            rdfs:label "Data Destruction"@en .
+
+
+###  https://w3id.org/GConsent#DataDisclosureByTransmission
+<https://w3id.org/GConsent#DataDisclosureByTransmission> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                                         rdfs:comment """
+Represents the type of processing where Disclosure by Transmission of data takes place.
+"""@en ;
+                                                         rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                                         rdfs:label "Data Disclosure by Transmission"@en .
+
+
+###  https://w3id.org/GConsent#DataDissemination
+<https://w3id.org/GConsent#DataDissemination> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                              rdfs:comment """
+Represents the type of processing where Dissemination of data takes place.
+"""@en ;
+                                              rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                              rdfs:label "Data Dissemination"@en .
+
+
+###  https://w3id.org/GConsent#DataErasure
+<https://w3id.org/GConsent#DataErasure> rdf:type owl:Class ;
+                                        rdfs:subClassOf :Deletion ;
+                                        rdfs:comment """
+Represents the type of processing where Erasure of data takes place.
+"""@en ;
+                                        rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                        rdfs:label "Data Erasure"@en .
+
+
+###  https://w3id.org/GConsent#DataRecording
+<https://w3id.org/GConsent#DataRecording> rdf:type owl:Class ;
+                                          rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                          rdfs:comment """
+Represents the type of processing where Recording of data takes place.
+"""@en ;
+                                          rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                          rdfs:label "Data Recording"@en .
+
+
+###  https://w3id.org/GConsent#DataRestriction
+<https://w3id.org/GConsent#DataRestriction> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                            rdfs:comment """
+Represents the type of processing where Restriction of data takes place.
+"""@en ;
+                                            rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                            rdfs:label "Data Restriction"@en .
+
+
+###  https://w3id.org/GConsent#DataRetrieval
+<https://w3id.org/GConsent#DataRetrieval> rdf:type owl:Class ;
+                                          rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                          rdfs:comment """
+Represents the type of processing where Retrieval of data takes place.
+"""@en ;
+                                          rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                          rdfs:label "Data Retrieval"@en .
+
+
+###  https://w3id.org/GConsent#DataSharing
+<https://w3id.org/GConsent#DataSharing> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                        rdfs:comment """
+Type of processing where sharing of data takes place with a Third Party.
+"""@en ;
+                                        rdfs:label "Data Sharing"@en .
+
+
+###  https://w3id.org/GConsent#DataStructuring
+<https://w3id.org/GConsent#DataStructuring> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                            rdfs:comment """
+Represents the type of processing where Structuring of data takes place.
+"""@en ;
+                                            rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+                                            rdfs:label "Data Structuring"@en .
+
+
+###  https://w3id.org/GConsent#Processing
+<https://w3id.org/GConsent#Processing> rdf:type owl:Class ;
+                                       rdfs:comment """
+Processing is defined by the GDPR (Article 4-2) as \"any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;\". Processing can be considered as the action, within an activity for example, that uses data in a particular or specific way. Therefore, processing specifies what is happening to/with the data. To define a type of processing (or its associated action), the Processing class should be subclassed for each type. Furthermore, each subclass should define a instance as a generic representative of that action. For example, \"collect\" as a type of processing (defined by the GDPR), is defined as the class DataCollection, which is a subclass of Processing, and has the individual CollectionOfPersonalData to represent a generic instance of the concept. This is to provide a ready-to-use ontology in terms of \"collect\" as an action, while also providing a way to specialise the action/processing. GConsent defines several such types of processing taken from the text of the GDPR.
+"""@en ;
+                                       rdfs:isDefinedBy <https://w3id.org/GDPRtEXT#DataActivity> ;
+                                       rdfs:label "Processing"@en .
+
+
+###  https://w3id.org/GConsent#Purpose
+<https://w3id.org/GConsent#Purpose> rdf:type owl:Class ;
+                                    rdfs:subClassOf <https://w3id.org/GConsent#Processing> ;
+                                    rdfs:comment """
+Purpose refers to the aim or goal towards which the data is processed (or associated with any other form of action).
+"""@en ;
+                                    rdfs:isDefinedBy <https://w3id.org/GDPRtEXT/gdpr> ;
+                                    rdfs:label "Purpose"@en .
+
+
+###  https://w3id.org/GConsent#Status
+<https://w3id.org/GConsent#Status> rdf:type owl:Class ;
+                                   rdfs:subClassOf :Consent ;
+                                   rdfs:comment """
+Represents the status of consent for the data subject. This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn.
+"""@en ;
+                                   rdfs:label "Status"@en .
+
+
+###  https://w3id.org/GConsent#StatusInvalidForProcessing
+<https://w3id.org/GConsent#StatusInvalidForProcessing> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Validation ;
+                                                       owl:disjointWith <https://w3id.org/GConsent#StatusValidForProcessing> ;
+                                                       rdfs:comment """
+Represents consent states that are invalid for processing.
+"""@en ;
+                                                       rdfs:label "Status invalid for Processing"@en .
+
+
+###  https://w3id.org/GConsent#StatusValidForProcessing
+<https://w3id.org/GConsent#StatusValidForProcessing> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Validation ;
+                                                     rdfs:comment """
+Represents consent states that are valid for processing
+"""@en ;
+                                                     rdfs:label "Status valid for Processing"@en .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/Country
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/Country> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeopoliticalEntity> ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/usesAdministrativeLanguage> ;
+                                                                                         owl:allValuesFrom <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/Language>
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortName> ;
+                                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishShortNameInCapitals> ;
+                                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchShortName> ;
+                                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchShortNameInCapitals> ;
+                                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/isIndependent> ;
+                                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                         owl:onDataRange xsd:boolean
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasEnglishFullName> ;
+                                                                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/hasFrenchFullName> ;
+                                                                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ;
+                                                                       rdfs:isDefinedBy <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> ;
+                                                                       rdfs:label "country" ;
+                                                                       skos:definition "a geopolitical entity representing a country or dependent territory"^^xsd:string .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/CountrySubdivision
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/CountrySubdivision> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeopoliticalEntity> ;
+                                                                                  rdfs:isDefinedBy <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> ;
+                                                                                  rdfs:label "country subdivision" ;
+                                                                                  skos:definition "a geopolitical entity, typically a division of a country, dependency, or other area of special geopolitical interest related to a country or other geopolitical entity"^^xsd:string .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeographicRegion
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeographicRegion> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/Location> ;
+                                                                                terms:source <https://en.oxforddictionaries.com/definition/region> ;
+                                                                                rdfs:isDefinedBy <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> ;
+                                                                                rdfs:label "geographic region" ;
+                                                                                skos:definition "an area, especially part of a country or the world having definable characteristics but not always fixed boundaries"^^xsd:string .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeopoliticalEntity
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeopoliticalEntity> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeographicRegion> ;
+                                                                                  rdfs:isDefinedBy <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> ;
+                                                                                  rdfs:label "geopolitical entity" ;
+                                                                                  skos:definition "any country, federal province, city or other administrative unit that represents a geophysical location and has some political identity"^^xsd:string .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/Location
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/Location> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf :Agreement ;
+                                                                        rdfs:isDefinedBy <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> ;
+                                                                        rdfs:label "location" ;
+                                                                        skos:definition "a place or position in time and/or space, including virtual place"^^xsd:string .
+
+
+###  https://www.omg.org/spec/LCC/Countries/CountryRepresentation/Territory
+<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/Territory> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/GeopoliticalEntity> ;
+                                                                         rdfs:isDefinedBy <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> ;
+                                                                         rdfs:label "territory" ;
+                                                                         skos:definition "a geopolitical entity, typically considered an area of special geopolitical interest, related to a country or other geopolitical entity"^^xsd:string ;
+                                                                         skos:note "Certain territories are included in the ISO 3166-2 code set without an alpha 2 or alpha 3 code.  In these cases, the numeric code for the subregion may have more than 3 characters in their corresponding numeric region codes."^^xsd:string .
+
+
+###  https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/Language
+<https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/Language> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf :Agreement .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
